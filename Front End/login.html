@@ -1,29 +1,33 @@
 <html>
 <head>
-  <title>Firebase Login</title>
+  <title>Travel Bot</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login.css" />
 </head>
 <body>
-
+   
   <div id="login_div" class="main-div">
-    <h3>Welcome to Travel Bot</h3>
+    <h4>Welcome to Travel Bot</h4>
     <input type="email" placeholder="Email..." id="email_field" />
     <input type="password" placeholder="Password..." id="password_field" />
 
     <button onclick="login()">Login to Account</button>
-    <br>
-    <a href="registration.html" style="font-size: 13px;">NEW USER REGISTRATION</a>
+
+    <button onclick="g_login()" style="margin-top:25px">Guest Login</button>
+  
+    <a href="reset pwd.html" style="margin-top:25px">RESET PASSWORD</a>
+
+    <a href="register.html" style="margin-top:25px">NEW USER REGISTRATION</a>
   </div>
+  
 
   <div id="user_div" class="loggedin-div">
     <h3>Welcome User</h3>
     <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
     <button onclick="logout()">Logout</button>
   </div>
-
-
-
+</div>
+  
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -37,7 +41,12 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script src="index.js"></script>
+  <script src="login.js"></script>
 
 </body>
 </html>
+
+
+
+
+

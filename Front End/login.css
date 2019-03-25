@@ -1,51 +1,75 @@
-h2{
-	color: white;
-	font-weight: bold;
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
+body {
+  background: url("Sunset.jpg");
+  background-size: cover;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 36px;
 }
-body{
-	background: url("Sunset.jpg");
+
+input, button, a {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
 }
-form{
-  text-align: center;
+
+.main-div, .loggedin-div {
+  width: 20%;
+  margin: 0px auto;
+  margin-top: 150px;
+  padding: 20px;
+  display: none;
+}
+
+.main-div input {
+  display: block;
+  border: 2px solid black;
+  border-radius: 25px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div input:focus {
+  border: 1px solid #777;
+}
+
+.main-div button, .loggedin-div button {
+  background: #5d8ffc;
+  color: #fff;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 15px;
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
 }
 
 a {
-	color: red;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  background: rgb(50, 82, 3);
+  color: #fff;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 15px;
+  display: block;
+  width: 90%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
 }
 
-a:hover {
-	color: maroon;
-}
-input{
-	border-radius: 25px;
-    border: 2px solid black;
-}
-
-.niceButton {
-	border-radius: 15px;
-	width: 100px;
-    border: 2px solid black;
-    background-image: linear-gradient(to top, #000000, #000000, #000000, #000000, #000000, #0d0c0c, #151415, #1c1b1c, #2b2b2d, #393c3e, #484d50, #586060);
-    color: white;   
-    padding: 8px 10px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out; }
-.niceButton:hover {
-	color: black;
-    background-image: linear-gradient(to top, #0b093d, #0c1149, #0e1855, #0e1f62, #0c266f, #013379, #004081, #004d89, #0a5f89, #356e85, #5a7c83, #7d8787);
-    }
-
-.UIaccess{
-  background-color: #FF9900;
-  -webkit-box-shadow: 10px 13px 95px 55px rgba(0,0,0,0.74);
-  -moz-box-shadow: 10px 13px 95px 55px rgba(0,0,0,0.74);
-  box-shadow: 10px 13px 95px 55px rgba(0,0,0,0.74);
-  padding:40px;
-  width: 350px;
-  height: 300px;
-  margin-top: 90px;
-  margin-left: 180px;
-  margin: 0 auto;
+.main-div button:hover, .loggedin-div button:hover {
+  background: #fff;
+  color: #5d8ffc;
+  border: 1px solid #5d8ffc;
+  cursor: pointer;
 }
