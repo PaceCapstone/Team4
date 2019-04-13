@@ -13,8 +13,8 @@ input{
     border: 2px solid black;
 }
 .niceButton {
-	border-radius: 10px;
-	width: 80px;
+	border-radius: 25px;
+	width: 70%;
     border: 2px solid black;
     background: #5d8ffc;
     color: #fff;   
