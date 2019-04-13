@@ -3,7 +3,7 @@ body{
   background-size: cover;
 }
 h3{
-	color: white;
+	color: black;
 }
 form{
   text-align: center;
@@ -16,21 +16,17 @@ input{
 	border-radius: 10px;
 	width: 80px;
     border: 2px solid black;
-    background-image: linear-gradient(to top, #000000, #000000, #000000, #000000, #000000, #0d0c0c, #151415, #1c1b1c, #2b2b2d, #393c3e, #484d50, #586060);
-    color: white;   
+    background: #5d8ffc;
+    color: #fff;   
     padding: 8px 10px;
     margin-top: 12px;
     cursor: pointer;
     transition: all 0.5s ease-in-out; }
 .niceButton:hover {
-	color: black;
-    background-image: linear-gradient(to top, #0b093d, #0c1149, #0e1855, #0e1f62, #0c266f, #013379, #004081, #004d89, #0a5f89, #356e85, #5a7c83, #7d8787);
-    }
+  background: #fff;
+  color: #5d8ffc;
+	}
 .Register{
-  background-color: #FF9900;
-  -webkit-box-shadow: 10px 13px 95px 55px rgba(0,0,0,0.74);
-  -moz-box-shadow: 10px 13px 95px 55px rgba(0,0,0,0.74);
-  box-shadow: 10px 13px 95px 55px rgba(0,0,0,0.74);
   padding:40px;
   width: 350px;
   height: 675px;
@@ -51,5 +47,5 @@ input{
   font-size: 12px;
 }
 h2{
-  color: white;
+  color: black;
 }
