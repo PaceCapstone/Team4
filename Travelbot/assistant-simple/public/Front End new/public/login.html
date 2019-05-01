@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title>Travel Bot</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+   
+  <div id="login_div" class="main-div">
+    <h4>Welcome to Travel Bot</h4>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+
+    <button onclick="g_login()" style="margin-top:25px">Guest Login</button>
+  
+    <a href="reset pwd.html" style="margin-top:25px">RESET PASSWORD</a>
+
+    <a href="register.html" style="margin-top:25px">NEW USER REGISTRATION</a>
+  </div>
+  
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+  
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCU87yhweJP3j2Y4DvPMgPZT-0ouAflB80",
+      authDomain: "capstoneteam4-bb4ce.firebaseapp.com",
+      databaseURL: "https://capstoneteam4-bb4ce.firebaseio.com",
+      projectId: "capstoneteam4-bb4ce",
+      storageBucket: "capstoneteam4-bb4ce.appspot.com",
+      messagingSenderId: "110799787101"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="login.js"></script>
+
+</body>
+</html>
+
+
+
+
+

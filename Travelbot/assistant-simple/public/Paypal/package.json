@@ -1,0 +1,16 @@
+{
+  "name": "botpay",
+  "version": "1.0.0",
+  "description": "palsandboxapi",
+  "main": "botpay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "paypal-rest-sdk": "^1.8.1"
+  }
+}
