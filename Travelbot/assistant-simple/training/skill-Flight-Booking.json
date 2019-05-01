@@ -1,0 +1,482 @@
+{
+  "name": "Flight Booking",
+  "intents": [
+    {
+      "intent": "new_trip",
+      "examples": [
+        {
+          "text": "I want to book a flight"
+        },
+        {
+          "text": "I want to book a trip"
+        },
+        {
+          "text": "I want to travel"
+        },
+        {
+          "text": "Help me book a trip"
+        },
+        {
+          "text": "Get me out of here"
+        },
+        {
+          "text": "hi"
+        },
+        {
+          "text": "hello"
+        },
+        {
+          "text": "Book a flight"
+        },
+        {
+          "text": "Help me travel"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "cancel",
+      "examples": [
+        {
+          "text": "Can I cancel at any time"
+        },
+        {
+          "text": "Can I cancel it?"
+        },
+        {
+          "text": "Can I cancel at any time?"
+        },
+        {
+          "text": "What is your cancellation policy?"
+        },
+        {
+          "text": "What if I cancel my trip?"
+        },
+        {
+          "text": "What if I back out of this trip?"
+        },
+        {
+          "text": "I might need to cancel"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "source_location",
+      "examples": [
+        {
+          "text": "@sys-location"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "flights_names",
+      "examples": [
+        {
+          "text": "Show me the flights"
+        },
+        {
+          "text": "Show me flight options"
+        },
+        {
+          "text": "Sunset Airline"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "luggage",
+      "examples": [
+        {
+          "text": "How much will baggage cost me?"
+        },
+        {
+          "text": "How much does luggage cost?"
+        },
+        {
+          "text": "What is the cost to check the bag?"
+        },
+        {
+          "text": "What will I pay to check a bag?"
+        },
+        {
+          "text": "What is the price to check a bag?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "airline",
+      "examples": [
+        {
+          "text": "yes"
+        },
+        {
+          "text": "options"
+        },
+        {
+          "text": "show me the options"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "goodbye",
+      "examples": [
+        {
+          "text": "goodbye"
+        },
+        {
+          "text": "Bye"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "airlinePreference",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Yes",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "No",
+          "synonyms": []
+        }
+      ]
+    },
+    {
+      "entity": "sys-time",
+      "values": []
+    },
+    {
+      "entity": "airline",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Speedy skies",
+          "synonyms": [
+            "speedy"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Sunset Airline",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "World wide skies",
+          "synonyms": [
+            "WWS"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "destinationLocation",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Dallas/Forth Worth(DFW)",
+          "synonyms": [
+            "DFW",
+            "Dallas"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sourceLocation",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Newyork(LGA)",
+          "synonyms": [
+            "LGA"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Atlanta(ATL)",
+          "synonyms": [
+            "ATL",
+            "Atlanta"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Newark(EWR)",
+          "synonyms": [
+            "EWR",
+            "Newark"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Newyork(JFK)",
+          "synonyms": [
+            "JFK"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Chicago(ORD)",
+          "synonyms": [
+            "ORD",
+            "Chicago"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": []
+    },
+    {
+      "entity": "class",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Economy",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Business",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "When would you like to leave?"
+      },
+      "parent": "slot_20_1543291347924",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_22_1543291347924",
+      "previous_sibling": "handler_21_1543291347924"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_20_1543291347924",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_21_1543291347924"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1543270615796",
+      "variable": "$airline",
+      "dialog_node": "slot_7_1554824979774",
+      "previous_sibling": "slot_20_1543291347924"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1543270615796",
+      "metadata": {},
+      "variable": "$destinationLocation",
+      "dialog_node": "slot_2_1543270653425",
+      "previous_sibling": "handler_33_1543292507124"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1543270615796",
+      "metadata": {},
+      "variable": "$date",
+      "dialog_node": "slot_20_1543291347924",
+      "previous_sibling": "slot_4_1554824767104"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1543270615796",
+      "metadata": {},
+      "variable": "$sourceLocation",
+      "dialog_node": "slot_4_1554824767104",
+      "previous_sibling": "slot_2_1543270653425"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "You can cancel within 48 hours."
+          ]
+        }
+      },
+      "parent": "node_1_1543270615796",
+      "metadata": {},
+      "conditions": "#cancel",
+      "event_name": "generic",
+      "dialog_node": "handler_33_1543292507124"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1554824767104",
+      "context": {
+        "sourceLocation": "@sourceLocation"
+      },
+      "metadata": {},
+      "conditions": "@sourceLocation",
+      "event_name": "input",
+      "dialog_node": "handler_5_1554824767104",
+      "previous_sibling": "handler_6_1554824767104"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Okay, I got that you want to travel to $destinationLocation. Which city you would be starting from?"
+      },
+      "parent": "slot_4_1554824767104",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_6_1554824767104"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Sorry, this location does not exists."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_2_1543270653425",
+      "event_name": "nomatch",
+      "dialog_node": "handler_2_1550525157485",
+      "previous_sibling": "handler_3_1543270653425"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1543270653425",
+      "context": {
+        "destinationLocation": "@destinationLocation"
+      },
+      "metadata": {},
+      "conditions": "@destinationLocation",
+      "event_name": "input",
+      "dialog_node": "handler_3_1543270653425",
+      "previous_sibling": "handler_4_1543270653425"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Sure, I can help you book a flight. Which city you want to travel to?"
+      },
+      "parent": "slot_2_1543270653425",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_4_1543270653425"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1554824979774",
+      "event_name": "focus",
+      "dialog_node": "handler_9_1554824979774",
+      "previous_sibling": "handler_8_1554824979774"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_7_1554824979774",
+      "context": {
+        "airline": "@airline"
+      },
+      "conditions": "@airline",
+      "event_name": "input",
+      "dialog_node": "handler_8_1554824979774"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "text": {
+          "values": [
+            "I didn't understand. You can try rephrasing.",
+            "Can you reword your statement? I'm not understanding.",
+            "I didn't get your meaning."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_1_1543270615796"
+    },
+    {
+      "type": "frame",
+      "title": "New Booking",
+      "output": {
+        "text": {
+          "values": [
+            "<button>Hello</button>"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {
+        "fallback": "leave"
+      },
+      "conditions": "#new_trip",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1543270615796",
+      "digress_out": "allow_all",
+      "previous_sibling": "Welcome",
+      "digress_out_slots": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "text": {
+          "values": [
+            "Hello, How can I help you?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "9e01ba00-8f69-4f52-8b09-d104a6d90fff",
+  "counterexamples": [
+    {
+      "text": "Sunset Airline"
+    }
+  ],
+  "learning_opt_out": false,
+  "status": "Available"
+}
