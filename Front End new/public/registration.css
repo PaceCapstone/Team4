@@ -1,12 +1,15 @@
 body{
+  text-align: center;
   background: url("Sunset.jpg");
   background-size: cover;
 }
 h3{
 	color: black;
 }
-form{
+#registerForm {
+  display: inline-block;
   text-align: center;
+  justify-content: center;
 }
 input{
 	border-radius: 25px;
@@ -26,14 +29,6 @@ input{
   background: #fff;
   color: #5d8ffc;
 	}
-.Register{
-  padding:40px;
-  width: 350px;
-  height: 675px;
-  margin-top: 90px;
-  margin-left: 180px;
-  margin: 0 auto;
-}
 #matching {
   font-size: 15px;
 }
