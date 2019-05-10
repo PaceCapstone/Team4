@@ -1,33 +1,46 @@
-h2{
-	color: black;
-	font-weight: bold;
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
-}
 body{
-	background: url("Sunset.jpg");
   text-align: center;
+  background: url("Sunset.jpg");
+  background-size: cover;
 }
-
+h3{
+	color: black;
+}
+#registerForm {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+}
+input{
+	border-radius: 25px;
+    border: 2px solid black;
+}
 .niceButton {
-	  border-radius: 25px;
-	  width: 50%;
+	border-radius: 25px;
+	width: 70%;
     border: 2px solid black;
     background: #5d8ffc;
-    color: #fff;  
+    color: #fff;   
     padding: 8px 10px;
-    margin-top: 10px;
+    margin-top: 12px;
     cursor: pointer;
     transition: all 0.5s ease-in-out; }
 .niceButton:hover {
   background: #fff;
   color: #5d8ffc;
 	}
-
-.UIaccess{
-  padding:40px;
-  width: 350px;
-  height: 300px;
-  margin-top: 90px;
-  margin-left: 180px;
-  margin: 0 auto;
+#matching {
+  font-size: 15px;
+}
+#checkemail {
+  font-size: 15px;
+}
+#pass_length {
+  font-size: 15px;
+}
+#user {
+  font-size: 12px;
+}
+h2{
+  color: black;
 }
