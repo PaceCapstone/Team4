@@ -2,133 +2,95 @@
   "name": "Flight Booking",
   "intents": [
     {
+      "intent": "cancel",
+      "examples": [
+        {
+          "text": "clear"
+        },
+        {
+          "text": "exit"
+        },
+        {
+          "text": "cancel"
+        }
+      ]
+    },
+    {
       "intent": "new_trip",
       "examples": [
         {
-          "text": "I want to book a flight"
-        },
-        {
-          "text": "I want to book a trip"
+          "text": "Help me book a trip"
         },
         {
           "text": "I want to travel"
         },
         {
-          "text": "Help me book a trip"
-        },
-        {
-          "text": "Get me out of here"
-        },
-        {
-          "text": "hi"
-        },
-        {
-          "text": "hello"
+          "text": "Help me travel"
         },
         {
           "text": "Book a flight"
         },
         {
-          "text": "Help me travel"
+          "text": "I want to book a trip"
+        },
+        {
+          "text": "Get me out of here"
+        },
+        {
+          "text": "I want to book a flight"
         }
       ],
       "description": ""
     },
     {
-      "intent": "cancel",
+      "intent": "hello",
       "examples": [
         {
-          "text": "Can I cancel at any time"
+          "text": "Hello"
         },
         {
-          "text": "Can I cancel it?"
+          "text": "hiii"
         },
         {
-          "text": "Can I cancel at any time?"
+          "text": "hi"
         },
         {
-          "text": "What is your cancellation policy?"
+          "text": "hey"
         },
         {
-          "text": "What if I cancel my trip?"
+          "text": "heya"
         },
         {
-          "text": "What if I back out of this trip?"
+          "text": "whats up"
         },
         {
-          "text": "I might need to cancel"
+          "text": "wassup"
+        },
+        {
+          "text": "heyyy"
         }
-      ],
-      "description": ""
+      ]
     },
     {
-      "intent": "source_location",
+      "intent": "who",
       "examples": [
         {
-          "text": "@sys-location"
-        }
-      ],
-      "description": ""
-    },
-    {
-      "intent": "flights_names",
-      "examples": [
-        {
-          "text": "Show me the flights"
+          "text": "Who are you?"
         },
         {
-          "text": "Show me flight options"
+          "text": "what are you"
         },
         {
-          "text": "Sunset Airline"
-        }
-      ],
-      "description": ""
-    },
-    {
-      "intent": "luggage",
-      "examples": [
-        {
-          "text": "How much will baggage cost me?"
+          "text": "who you"
         },
         {
-          "text": "How much does luggage cost?"
+          "text": "what do you do?"
         },
         {
-          "text": "What is the cost to check the bag?"
+          "text": "who is you"
         },
         {
-          "text": "What will I pay to check a bag?"
-        },
-        {
-          "text": "What is the price to check a bag?"
-        }
-      ],
-      "description": ""
-    },
-    {
-      "intent": "airline",
-      "examples": [
-        {
-          "text": "yes"
-        },
-        {
-          "text": "options"
-        },
-        {
-          "text": "show me the options"
-        }
-      ],
-      "description": ""
-    },
-    {
-      "intent": "goodbye",
-      "examples": [
-        {
-          "text": "goodbye"
-        },
-        {
-          "text": "Bye"
+          "text": "what is you"
         }
       ],
       "description": ""
@@ -136,23 +98,168 @@
   ],
   "entities": [
     {
-      "entity": "airlinePreference",
+      "entity": "destinationLocation",
       "values": [
         {
           "type": "synonyms",
-          "value": "Yes",
+          "value": "Newyork(JFK)",
+          "synonyms": [
+            "Newyork",
+            "JFK",
+            "NYC"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Chicago(ORD)",
+          "synonyms": [
+            "ORD",
+            "Chicago"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Atlanta(ATL)",
+          "synonyms": [
+            "ATL",
+            "Atlanta"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Dallas/Forth Worth(DFW)",
+          "synonyms": [
+            "DFW",
+            "Dallas"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Newark(EWR)",
+          "synonyms": [
+            "EWR",
+            "Newark",
+            "New Jersey",
+            "NJ"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Boston(BOS)",
+          "synonyms": [
+            "Boston",
+            "BOS"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Los Angeles(LAX)",
+          "synonyms": [
+            "LAX",
+            "LA",
+            "Los Angeles"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "San Francisco(SFO)",
+          "synonyms": [
+            "SFO",
+            "San Francisco"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-currency",
+      "values": []
+    },
+    {
+      "entity": "speedyskies",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "08:15",
           "synonyms": []
         },
         {
           "type": "synonyms",
-          "value": "No",
+          "value": "13:00",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "18:20",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "17:50",
           "synonyms": []
         }
       ]
     },
     {
-      "entity": "sys-time",
+      "entity": "class",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Business",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Economy",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
       "values": []
+    },
+    {
+      "entity": "Worldwideskies",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "23:45",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "21:35",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "11:20",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "15:50",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "confirmation",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "No",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Yes",
+          "synonyms": []
+        }
+      ]
     },
     {
       "entity": "airline",
@@ -180,15 +287,27 @@
       "fuzzy_match": true
     },
     {
-      "entity": "destinationLocation",
+      "entity": "sunsetairline",
       "values": [
         {
           "type": "synonyms",
-          "value": "Dallas/Forth Worth(DFW)",
-          "synonyms": [
-            "DFW",
-            "Dallas"
-          ]
+          "value": "20:00",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "10:50",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "14:20",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "13:20",
+          "synonyms": []
         }
       ],
       "fuzzy_match": true
@@ -198,9 +317,10 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "Newyork(LGA)",
+          "value": "Boston(BOS)",
           "synonyms": [
-            "LGA"
+            "Boston",
+            "BOS"
           ]
         },
         {
@@ -213,17 +333,10 @@
         },
         {
           "type": "synonyms",
-          "value": "Newark(EWR)",
-          "synonyms": [
-            "EWR",
-            "Newark"
-          ]
-        },
-        {
-          "type": "synonyms",
           "value": "Newyork(JFK)",
           "synonyms": [
-            "JFK"
+            "JFK",
+            "Newyork"
           ]
         },
         {
@@ -233,26 +346,41 @@
             "ORD",
             "Chicago"
           ]
-        }
-      ],
-      "fuzzy_match": true
-    },
-    {
-      "entity": "sys-date",
-      "values": []
-    },
-    {
-      "entity": "class",
-      "values": [
-        {
-          "type": "synonyms",
-          "value": "Economy",
-          "synonyms": []
         },
         {
           "type": "synonyms",
-          "value": "Business",
-          "synonyms": []
+          "value": "Newark(EWR)",
+          "synonyms": [
+            "EWR",
+            "Newark",
+            "New Jersey",
+            "NJ"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Dallas/Fort Worth(DFW)",
+          "synonyms": [
+            "DFW",
+            "Dallas"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "San Francisco(SFO)",
+          "synonyms": [
+            "San Francisco",
+            "SFO"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Los Angeles(LAX)",
+          "synonyms": [
+            "Los Angeles",
+            "LA",
+            "LAX"
+          ]
         }
       ],
       "fuzzy_match": true
@@ -268,41 +396,455 @@
   "description": "",
   "dialog_nodes": [
     {
-      "type": "event_handler",
+      "type": "standard",
       "output": {
-        "text": "When would you like to leave?"
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
       },
-      "parent": "slot_20_1543291347924",
-      "metadata": {},
-      "event_name": "focus",
-      "dialog_node": "handler_22_1543291347924",
-      "previous_sibling": "handler_21_1543291347924"
-    },
-    {
-      "type": "event_handler",
-      "parent": "slot_20_1543291347924",
+      "parent": "node_2_1557766830710",
       "context": {
-        "date": "@sys-date"
+        "class": "Business",
+        "price": "\\$495"
       },
-      "conditions": "@sys-date",
-      "event_name": "input",
-      "dialog_node": "handler_21_1543291347924"
-    },
-    {
-      "type": "slot",
-      "parent": "node_1_1543270615796",
-      "variable": "$airline",
-      "dialog_node": "slot_7_1554824979774",
-      "previous_sibling": "slot_20_1543291347924"
-    },
-    {
-      "type": "slot",
-      "output": {},
-      "parent": "node_1_1543270615796",
       "metadata": {},
-      "variable": "$destinationLocation",
-      "dialog_node": "slot_2_1543270653425",
-      "previous_sibling": "handler_33_1543292507124"
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_4_1557766830712",
+      "previous_sibling": "node_3_1557766830712"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_2_1557766830710",
+      "context": {
+        "class": "Economy",
+        "price": "\\$195"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_3_1557766830712"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1557686452520",
+      "context": {
+        "class": "Business",
+        "price": "\\$555"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_3_1557686452522",
+      "previous_sibling": "node_2_1557686452522"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1557686452520",
+      "context": {
+        "class": "Economy",
+        "price": "\\$175"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_2_1557686452522"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_10_1557786694254",
+      "context": {
+        "class": "Business",
+        "price": "\\$543"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_12_1557786694255",
+      "previous_sibling": "node_11_1557786694255"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_10_1557786694254",
+      "context": {
+        "class": "Economy",
+        "price": "\\$323"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_11_1557786694255"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1557786208319",
+      "context": {
+        "class": "Business",
+        "price": "\\$499"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_3_1557786208321",
+      "previous_sibling": "node_2_1557786208321"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1557786208319",
+      "context": {
+        "class": "Economy",
+        "price": "\\$199"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_2_1557786208321"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1555950503773",
+      "context": {
+        "class": "Business",
+        "price": "\\$550"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_7_1555950801314",
+      "previous_sibling": "node_5_1555950616776"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1555950503773",
+      "context": {
+        "class": "Economy",
+        "price": "\\$300"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_5_1555950616776"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "random"
+        }
+      },
+      "parent": "node_2_1555950265761",
+      "context": {
+        "class": "Business",
+        "price": "\\$490"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_6_1555950687609",
+      "previous_sibling": "node_3_1555950403141"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_2_1555950265761",
+      "context": {
+        "class": "Economy",
+        "price": "\\$230"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_3_1555950403141"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_12_1555872840552",
+      "context": {
+        "class": "Business",
+        "price": "\\$545"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_14_1555872992366",
+      "previous_sibling": "node_13_1555872930344"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_12_1555872840552",
+      "context": {
+        "class": "Economy",
+        "price": "\\$255"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_13_1555872930344"
+    },
+    {
+      "type": "standard",
+      "title": "Speedy skies",
+      "output": {
+        "generic": [
+          {
+            "title": "Here are your flight options:",
+            "options": [
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 08:15 <hr>",
+                "value": {
+                  "input": {
+                    "text": "08:15"
+                  }
+                }
+              },
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 18:20 <hr>",
+                "value": {
+                  "input": {
+                    "text": "18:20"
+                  }
+                }
+              },
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 13:00 <hr>",
+                "value": {
+                  "input": {
+                    "text": "13:00"
+                  }
+                }
+              },
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 17:50 <hr>",
+                "value": {
+                  "input": {
+                    "text": "17:50"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1543270615796",
+      "context": {
+        "airline": "Speedy skies"
+      },
+      "metadata": {},
+      "conditions": "@airline:(Speedy skies)",
+      "dialog_node": "node_1_1555950144705",
+      "previous_sibling": "node_18_1555873265064"
+    },
+    {
+      "type": "standard",
+      "title": "Sunset Airlines",
+      "output": {
+        "generic": [
+          {
+            "title": "Here are the flight options:",
+            "options": [
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 13:20 <hr>",
+                "value": {
+                  "input": {
+                    "text": "13:20"
+                  }
+                }
+              },
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 10:50 <hr>",
+                "value": {
+                  "input": {
+                    "text": "10:50"
+                  }
+                }
+              },
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 20:00 <hr>",
+                "value": {
+                  "input": {
+                    "text": "20:00"
+                  }
+                }
+              },
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 14:20 <hr>",
+                "value": {
+                  "input": {
+                    "text": "14:20"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1543270615796",
+      "context": {
+        "airline": "Sunset Airlines"
+      },
+      "metadata": {},
+      "conditions": "@airline:(Sunset Airline)",
+      "dialog_node": "node_18_1555873265064",
+      "previous_sibling": "node_1_1555866768066"
     },
     {
       "type": "slot",
@@ -323,19 +865,539 @@
       "previous_sibling": "slot_2_1543270653425"
     },
     {
-      "type": "event_handler",
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1543270615796",
+      "metadata": {},
+      "variable": "destinationLocation",
+      "dialog_node": "slot_2_1543270653425",
+      "previous_sibling": "node_1_1555950144705"
+    },
+    {
+      "type": "frame",
+      "title": "World wide skies",
+      "output": {
+        "generic": [
+          {
+            "title": "Here are the flight options:",
+            "options": [
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 11:20 <hr>",
+                "value": {
+                  "input": {
+                    "text": "11:20"
+                  }
+                }
+              },
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 15:50 <hr>",
+                "value": {
+                  "input": {
+                    "text": "15:50"
+                  }
+                }
+              },
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 21:35 <hr>",
+                "value": {
+                  "input": {
+                    "text": "21:35"
+                  }
+                }
+              },
+              {
+                "label": "$destinationLocation -> $sourceLocation <br> 23:45 <hr>",
+                "value": {
+                  "input": {
+                    "text": "23:45"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1543270615796",
+      "context": {
+        "airline": "World wide skies"
+      },
+      "metadata": {
+        "fallback": "leave",
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "@airline:(World wide skies)",
+      "dialog_node": "node_1_1555866768066",
+      "digress_out": "allow_all",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please select:",
+            "options": [
+              {
+                "label": "Economy -> \\$275",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$454",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_18_1555873265064",
+      "context": {
+        "time": "13:20"
+      },
+      "metadata": {},
+      "conditions": "@sunsetairline:(13:20)",
+      "dialog_node": "node_19_1555873417567",
+      "previous_sibling": "node_1_1557686452520"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please select:",
+            "options": [
+              {
+                "label": "Economy -> \\$180",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$490",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_18_1555873265064",
+      "context": {
+        "time": "20:00"
+      },
+      "metadata": {},
+      "conditions": "@sunsetairline:20:00",
+      "dialog_node": "node_4_1557786216692",
+      "previous_sibling": "node_1_1557786208319"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please select:",
+            "options": [
+              {
+                "label": "Economy -> \\$199",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$499",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_18_1555873265064",
+      "context": {
+        "time": "14:20"
+      },
+      "metadata": {},
+      "conditions": "@sunsetairline:14:20",
+      "dialog_node": "node_1_1557786208319",
+      "previous_sibling": "node_19_1555873417567"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please select:",
+            "options": [
+              {
+                "label": "Economy -> \\$175",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$555",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_18_1555873265064",
+      "context": {
+        "time": "10:50"
+      },
+      "metadata": {},
+      "conditions": "@sunsetairline:10:50",
+      "dialog_node": "node_1_1557686452520"
+    },
+    {
+      "type": "standard",
       "output": {
         "text": {
           "values": [
-            "You can cancel within 48 hours."
-          ]
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
         }
       },
-      "parent": "node_1_1543270615796",
+      "parent": "node_7_1557786691247",
+      "context": {
+        "class": "Business",
+        "price": "\\$580"
+      },
       "metadata": {},
-      "conditions": "#cancel",
-      "event_name": "generic",
-      "dialog_node": "handler_33_1543292507124"
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_9_1557786691248",
+      "previous_sibling": "node_8_1557786691248"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_7_1557786691247",
+      "context": {
+        "class": "Economy",
+        "price": "\\$330"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_8_1557786691248"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_6_1555867509315",
+      "context": {
+        "class": "Business",
+        "price": "\\$600"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_11_1555872717435",
+      "previous_sibling": "node_7_1555870540342"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_6_1555867509315",
+      "context": {
+        "class": "Economy",
+        "price": "\\$200"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_7_1555870540342"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_19_1555873417567",
+      "context": {
+        "class": "Business",
+        "price": "\\$454"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_21_1555873584164",
+      "previous_sibling": "node_20_1555873499605"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_19_1555873417567",
+      "context": {
+        "class": "Economy",
+        "price": "\\$275"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_20_1555873499605"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1555866768066",
+      "dialog_node": "slot_3_1555867065313",
+      "previous_sibling": "node_2_1557766830710"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please select:",
+            "options": [
+              {
+                "label": "Economy -> \\$265",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$545",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1555866768066",
+      "context": {
+        "time": "21:35"
+      },
+      "metadata": {},
+      "conditions": "@Worldwideskies:(21:35)",
+      "dialog_node": "node_15_1555873057510",
+      "previous_sibling": "node_12_1555872840552"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please select:",
+            "options": [
+              {
+                "label": "Economy -> \\$255",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$545",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1555866768066",
+      "context": {
+        "time": "15:50"
+      },
+      "metadata": {},
+      "conditions": "@Worldwideskies:(15:50)",
+      "dialog_node": "node_12_1555872840552",
+      "previous_sibling": "node_6_1555867509315"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please select:",
+            "options": [
+              {
+                "label": "Economy -> \\195",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$495",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1555866768066",
+      "context": {
+        "time": "23:45"
+      },
+      "metadata": {},
+      "conditions": "@Worldwideskies:23:45",
+      "dialog_node": "node_2_1557766830710",
+      "previous_sibling": "node_15_1555873057510"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Okay, I got that you want to travel to $destinationLocation from $sourceLocation on $date in $airline. Searching for the available flights..."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_1_1555866768066",
+      "context": {
+        "airline": "World wide skies"
+      },
+      "disabled": true,
+      "metadata": {},
+      "dialog_node": "node_2_1555866947870",
+      "previous_sibling": "slot_3_1555867065313"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please select:",
+            "options": [
+              {
+                "label": "Economy  -> \\$200",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$600",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1555866768066",
+      "context": {
+        "time": "11:20"
+      },
+      "metadata": {},
+      "conditions": "@Worldwideskies:(11:20)",
+      "dialog_node": "node_6_1555867509315"
     },
     {
       "type": "event_handler",
@@ -361,19 +1423,74 @@
       "dialog_node": "handler_6_1554824767104"
     },
     {
-      "type": "event_handler",
+      "type": "standard",
       "output": {
         "text": {
           "values": [
-            "Sorry, this location does not exists."
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
           ],
           "selection_policy": "sequential"
         }
       },
-      "parent": "slot_2_1543270653425",
-      "event_name": "nomatch",
-      "dialog_node": "handler_2_1550525157485",
-      "previous_sibling": "handler_3_1543270653425"
+      "parent": "node_15_1555873057510",
+      "context": {
+        "class": "Business",
+        "price": "\\$545"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_17_1555873195661",
+      "previous_sibling": "node_16_1555873129142"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_15_1555873057510",
+      "context": {
+        "class": "Economy",
+        "price": "\\$265"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_16_1555873129142"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Okay, I got that you want to travel to $destinationLocation from $sourceLocation. When would you like to leave?"
+      },
+      "parent": "slot_20_1543291347924",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_22_1543291347924",
+      "previous_sibling": "handler_21_1543291347924"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_20_1543291347924",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_21_1543291347924"
     },
     {
       "type": "event_handler",
@@ -391,7 +1508,23 @@
     {
       "type": "event_handler",
       "output": {
-        "text": "Sure, I can help you book a flight. Which city you want to travel to?"
+        "text": {
+          "values": [
+            "Sorry, this location does not exists."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_2_1543270653425",
+      "metadata": {},
+      "event_name": "nomatch",
+      "dialog_node": "handler_2_1550525157485",
+      "previous_sibling": "handler_3_1543270653425"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Which city you want to travel to?"
       },
       "parent": "slot_2_1543270653425",
       "metadata": {},
@@ -399,22 +1532,308 @@
       "dialog_node": "handler_4_1543270653425"
     },
     {
-      "type": "event_handler",
-      "output": {},
-      "parent": "slot_7_1554824979774",
-      "event_name": "focus",
-      "dialog_node": "handler_9_1554824979774",
-      "previous_sibling": "handler_8_1554824979774"
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1557786216692",
+      "context": {
+        "class": "Business",
+        "price": "\\$490"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Business",
+      "dialog_node": "node_6_1557786216692",
+      "previous_sibling": "node_5_1557786216692"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Booking Details Confirmation: <br> $sourceLocation -> $destinationLocation <br> $date $time <br> $airline <br> $class  $price"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1557786216692",
+      "context": {
+        "class": "Economy",
+        "price": "\\$180"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_8_1555871271503"
+      },
+      "conditions": "@class:Economy",
+      "dialog_node": "node_5_1557786216692"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please select:",
+            "options": [
+              {
+                "label": "Economy -> \\$330",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$580",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1555950144705",
+      "context": {
+        "time": "17:50"
+      },
+      "metadata": {},
+      "conditions": "@speedyskies:(17:50)",
+      "dialog_node": "node_7_1557786691247",
+      "previous_sibling": "node_10_1557786694254"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please select:",
+            "options": [
+              {
+                "label": "Economy -> \\$323",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$543",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1555950144705",
+      "context": {
+        "time": "13:00"
+      },
+      "metadata": {},
+      "conditions": "@speedyskies:(13:00)",
+      "dialog_node": "node_10_1557786694254",
+      "previous_sibling": "node_2_1555950265761"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please select:",
+            "options": [
+              {
+                "label": "Economy -> \\$300",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$550",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1555950144705",
+      "context": {
+        "time": "18:20"
+      },
+      "metadata": {},
+      "conditions": "@speedyskies:(18:20)",
+      "dialog_node": "node_4_1555950503773",
+      "previous_sibling": "node_7_1557786691247"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "title": "Please Select:",
+            "options": [
+              {
+                "label": "Economy -> \\$230",
+                "value": {
+                  "input": {
+                    "text": "Economy"
+                  }
+                }
+              },
+              {
+                "label": "Business -> \\$490",
+                "value": {
+                  "input": {
+                    "text": "Business"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1555950144705",
+      "context": {
+        "time": "08:15"
+      },
+      "metadata": {},
+      "conditions": "@speedyskies:(08:15)",
+      "dialog_node": "node_2_1555950265761"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Thanks for your time."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_8_1555871271503",
+      "context": {
+        "date": null,
+        "time": null,
+        "class": null,
+        "price": null,
+        "airline": null,
+        "sourceLocation": null,
+        "destinationLocation": null
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "@confirmation:No",
+      "dialog_node": "node_10_1555872194849",
+      "previous_sibling": "node_9_1555872167081"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "text": {
+          "values": [
+            "Click on the link below for the payment <br> <!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n  <title>TRAVELBOT PAY</title>\n</head>\n<body>\n\n  <!--click booking button and will redirect user to booking payment page in browser-->\n<a id=\"payment\" href=\"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-95X57754AF611935J\"\" value=\"BOOK YOUR TRIP\">Book your trip</a>\n\n\n</body>\n</html>                   "
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_8_1555871271503",
+      "metadata": {},
+      "conditions": "@confirmation:Yes",
+      "dialog_node": "node_9_1555872167081"
     },
     {
       "type": "event_handler",
-      "parent": "slot_7_1554824979774",
-      "context": {
-        "airline": "@airline"
-      },
-      "conditions": "@airline",
+      "output": {},
+      "parent": "slot_3_1555867065313",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1555867065313",
+      "previous_sibling": "handler_4_1555867065313"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_3_1555867065313",
       "event_name": "input",
-      "dialog_node": "handler_8_1554824979774"
+      "dialog_node": "handler_4_1555867065313"
+    },
+    {
+      "type": "standard",
+      "title": "Hello",
+      "output": {
+        "text": {
+          "values": [
+            "Hey! How can I help you?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "#hello",
+      "dialog_node": "node_8_1555951200764",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Confirmation",
+      "output": {
+        "generic": [
+          {
+            "title": "Do you want to proceed?",
+            "options": [
+              {
+                "label": "Yes",
+                "value": {
+                  "input": {
+                    "text": "Yes"
+                  }
+                }
+              },
+              {
+                "label": "No",
+                "value": {
+                  "input": {
+                    "text": "No"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "metadata": {},
+      "dialog_node": "node_8_1555871271503",
+      "previous_sibling": "node_1_1543270615796"
     },
     {
       "type": "standard",
@@ -432,18 +1851,53 @@
       "metadata": {},
       "conditions": "anything_else",
       "dialog_node": "Anything else",
-      "previous_sibling": "node_1_1543270615796"
+      "previous_sibling": "node_9_1555951650106"
     },
     {
       "type": "frame",
       "title": "New Booking",
       "output": {
-        "text": {
-          "values": [
-            "<button>Hello</button>"
-          ],
-          "selection_policy": "sequential"
-        }
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Okay, I got that you want to travel to $destinationLocation from $sourceLocation on $date. Please select the airline you want to travel in."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "Airline Options:",
+            "options": [
+              {
+                "label": "World wide skies",
+                "value": {
+                  "input": {
+                    "text": "World wide skies"
+                  }
+                }
+              },
+              {
+                "label": "Speedy skies",
+                "value": {
+                  "input": {
+                    "text": "Speedy skies"
+                  }
+                }
+              },
+              {
+                "label": "Sunset airlines",
+                "value": {
+                  "input": {
+                    "text": "Sunset Airline"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
       },
       "metadata": {
         "fallback": "leave"
@@ -452,8 +1906,54 @@
       "digress_in": "does_not_return",
       "dialog_node": "node_1_1543270615796",
       "digress_out": "allow_all",
-      "previous_sibling": "Welcome",
+      "previous_sibling": "node_8_1555951200764",
       "digress_out_slots": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "Cancel",
+      "output": {
+        "text": {
+          "values": [
+            "Thanks for using Travel bot."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "context": {
+        "date": null,
+        "time": null,
+        "class": null,
+        "price": null,
+        "airline": null,
+        "sourceLocation": null,
+        "destinationLocation": null
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "#cancel",
+      "dialog_node": "node_9_1555951650106",
+      "previous_sibling": "node_13_1557787093988"
+    },
+    {
+      "type": "standard",
+      "title": "Who_are_you",
+      "output": {
+        "text": {
+          "values": [
+            "I am TravelBot! Here to help you book flights."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "metadata": {},
+      "conditions": "#who",
+      "dialog_node": "node_13_1557787093988",
+      "previous_sibling": "node_8_1555871271503"
     },
     {
       "type": "standard",
@@ -461,7 +1961,7 @@
       "output": {
         "text": {
           "values": [
-            "Hello, How can I help you?"
+            "Hello there, I am Travelbot. I can help you book a flight. "
           ],
           "selection_policy": "sequential"
         }
@@ -471,10 +1971,13 @@
       "dialog_node": "Welcome"
     }
   ],
-  "workspace_id": "9e01ba00-8f69-4f52-8b09-d104a6d90fff",
+  "workspace_id": "b1341b51-5942-477f-bdb5-40fefd48948a",
   "counterexamples": [
     {
       "text": "Sunset Airline"
+    },
+    {
+      "text": "Yes"
     }
   ],
   "learning_opt_out": false,
